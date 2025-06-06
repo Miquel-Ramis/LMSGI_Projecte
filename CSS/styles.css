@@ -339,6 +339,237 @@ main section article {
     text-decoration: underline;
 }
 
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    flex: 1;
+    padding-right: 3rem; 
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+    bottom: 50%;
+    user-select: none;
+    font-size: 1.5rem;
+    color: #999;
+}
+
+    .strength-bar {
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            height: 6px;
+            width: 100%;
+            background-color: #ccc;
+            border-radius: 3px;
+            z-index: 1;
+        }
+
+        .error-message {
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            font-size: 0.75rem;
+            color: red;
+            padding: 0 4px;
+            z-index: 2;
+            font-family: "Karla", sans-serif;
+            pointer-events: none;
+        }
+
+        .shake {
+            animation: shake 0.3s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            75% { transform: translateX(4px); }
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-item{
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            width: 50%;
+        }
+
+        .checkbox-container label{
+            width: 500px;
+            font-size: 1rem;
+            color: var(--color-text);
+            cursor: pointer;
+        }
+        .checkbox-container input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .shake {
+            animation: shake 0.3s;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        .error-container {
+           display: none;
+        }
+        .error-message {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            font-size: 0.8rem;
+            color: red;
+            pointer-events: none;
+        }
+
+        .like {
+            position: absolute;
+        }
+
+        .like img#like-button {
+            width: 10px;
+            height: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .like img:hover {
+            transform: scale(1.1);
+        }
+
+        .like img.liked {
+            filter: invert(0.5) sepia(1) saturate(5) hue-rotate(180deg);
+        }
+
+
+
+@media (min-width: 577px) and (max-width: 1024px) {
+    section {
+        display: inline-block;
+        justify-content: center;
+    }
+
+    .checkbox-item {
+        width: 100%;
+    }
+
+    .card {
+        width: 45%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    header img[alt="MENU"] {
+        display: none;
+    }
+
+    header {
+        height: 75px;
+    }
+    header img[alt="LOGO"] {
+        display: inline-block;
+        position: absolute;
+        left:0;
+        padding-left: 50px;
+    }
+    .nav-hidden img[alt="LOGO"]{
+        display: none;
+    }
+    header .nav-hidden {
+        display: inline-block;
+        right: 20px;
+    }
+
+    .nav-hidden ul {
+        list-style: none;
+        display: inline-block;
+        justify-content: right;
+        padding: 10px;
+    }
+
+    .nav-hidden ul li {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    .nav-hidden ul li a {
+        color: var(--color-text);
+        text-decoration: none;
+        font-family: "Roboto";
+    }
+
+    .nav-hidden ul li a:hover {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    section > article:nth-child(3) {
+        display: none;
+    }
+
+        
+    .login-card {
+    max-width: 600px;
+    padding: 2.5rem 2rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(255, 111, 0, 0.35);
+    font-size: 1.1rem;
+    height: 75%;
+    width: 100%;
+}
+
+    .login-card h2 {
+        font-size: 2.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .login-card input {
+        padding: 1.2rem 1.2rem;
+        font-size: 1.15rem;
+        margin-bottom: 1.5rem;
+        border-radius: 10px;
+    }
+
+    .btn-login {
+        padding: 1.3rem;
+        font-size: 1.25rem;
+        border-radius: 12px;
+    }
+
+    .login-card p {
+        font-size: 1.3rem;
+    }
+
+    .btn-register {
+        font-size: 1.3rem;
+    }
+}
 
 @media(min-width: 1025px) {
     header img[alt="MENU"] {
@@ -402,7 +633,6 @@ main section article {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
 }
 
     .login-card {
@@ -410,9 +640,11 @@ main section article {
         border: 2px solid #F1ECEC;
         border-radius: 10px;
         padding: 2rem;
-        width: 65%;
         color: var(--color-text);
         font-family: "Roboto";
+        height: 75%;
+        width: 100%;
+        max-width: 75%;
 }
 
     .login-card h2 {
@@ -479,7 +711,6 @@ main section article {
 }
 
     .login-card {
-        max-width: 600px;
         padding: 3rem 3rem;
         border-radius: 16px;
         box-shadow: 0 6px 20px rgba(255, 111, 0, 0.5);
@@ -510,101 +741,5 @@ main section article {
 
     .btn-register {
         font-size: 1.4rem;
-    }
-}
-
-@media (min-width: 577px) and (max-width: 1024px) {
-    section {
-        display: inline-block;
-        justify-content: center;
-    }
-
-    .card {
-        width: 45%;
-        display: inline-block;
-        vertical-align: top;
-    }
-
-    header img[alt="MENU"] {
-        display: none;
-    }
-
-    header {
-        height: 75px;
-    }
-    header img[alt="LOGO"] {
-        display: inline-block;
-        position: absolute;
-        left:0;
-        padding-left: 50px;
-    }
-    .nav-hidden img[alt="LOGO"]{
-        display: none;
-    }
-    header .nav-hidden {
-        display: inline-block;
-        right: 20px;
-    }
-
-    .nav-hidden ul {
-        list-style: none;
-        display: inline-block;
-        justify-content: right;
-        padding: 10px;
-    }
-
-    .nav-hidden ul li {
-        display: inline-block;
-        padding: 10px;
-    }
-
-    .nav-hidden ul li a {
-        color: var(--color-text);
-        text-decoration: none;
-        font-family: "Roboto";
-    }
-
-    .nav-hidden ul li a:hover {
-        font-weight: bold;
-        text-decoration: underline;
-    }
-
-    section > article:nth-child(3) {
-        display: none;
-    }
-
-        
-    .login-card {
-    max-width: 480px;
-    padding: 2.5rem 2rem;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(255, 111, 0, 0.35);
-    font-size: 1.1rem;
-}
-
-    .login-card h2 {
-        font-size: 2.4rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .login-card input {
-        padding: 1.2rem 1.2rem;
-        font-size: 1.15rem;
-        margin-bottom: 1.5rem;
-        border-radius: 10px;
-    }
-
-    .btn-login {
-        padding: 1.3rem;
-        font-size: 1.25rem;
-        border-radius: 12px;
-    }
-
-    .login-card p {
-        font-size: 1.3rem;
-    }
-
-    .btn-register {
-        font-size: 1.3rem;
     }
 }
